@@ -13,7 +13,4 @@
   ([key-string vec hash]
    (to-hash (keyword key-string) (first vec) (rest vec) hash))
   ([key value vec hash]
-   (let [elem {key value}
-         len (count vec)
-         hash (to-hash vec)]
-     (merge hash elem))))
+   (merge (to-hash vec) {key value})))
